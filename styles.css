@@ -1,0 +1,31 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	color: orange;
+}
+
+img {
+	width: 400px;
+	border: 10px;
+	cursor: pointer;
+}
+
+#cat {
+	-webkit-clip-path: circle(100px at 50% 50%);
+}
+
+/*div {
+	width: 400px;
+	height: 400px;
+	background: #1e90ff;
+	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Center the image */
+/*html, body { height: 100%; }
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}*/

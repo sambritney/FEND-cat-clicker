@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<title>Cat Clicker</title>
+	<meta charset = "utf-8">
+	<link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div>
+		<h1>Cat Clicker</h1>
+		<img src="img/cat_640.jpg" alt="Sleepy Cat" id="cat">
+		<h2 id="count">0</h2>
+	</div>
+
+
+	<script>
+	// create variable for counter
+	var clickCount = 0
+
+	//listen for clicks on cat image and increase counter
+	var elem = document.getElementById("cat");
+	elem.addEventListener("click", function () {
+		count.innerHTML = clickCount +=1;
+	}, false);
+	</script>
+
+
+</body>
+</html>
