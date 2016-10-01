@@ -1,5 +1,5 @@
 
-var cats [
+var cats = [
 	{
 		"name":"Sleepy Cat",
 		"image":"img/cat_640.jpg",
@@ -32,11 +32,15 @@ var cats [
 
 for (var i = 0; i < cats.length; i++) {
 	var cat = cats[i];
-	var elem = document.getElementById('catList');
-	elem.innerHTML = cat.name;
+	var catList = document.getElementById("catList");
+
+	var elem = document.createElement("li");
+	elem.textContent = cat.name;
 	console.log(cat.name);
-	document.body.appendChild(elem);
-}
+	catList.appendChild(elem);
+
+	document.body.appendChild(catList);
+};
 
 
 

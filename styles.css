@@ -4,6 +4,10 @@ body {
 	color: orange;
 }
 
+li {
+	list-style-type: none;
+}
+
 img {
 	width: 400px;
 	border: 10px;
