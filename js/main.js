@@ -1,4 +1,6 @@
+//Cat Clicker Premium
 
+//declare cats
 var cats = [
 	{
 		"name":"Sleepy Cat",
@@ -28,58 +30,33 @@ var cats = [
 
 ];
 
-
-
+//loop over cats in array
 for (var i = 0; i < cats.length; i++) {
 	var cat = cats[i];
-	var catList = document.getElementById("catList");
 
+	//create DOM element for catItem (name)
 	var catItem = document.createElement("li");
 	catItem.textContent = cat.name;
 	console.log(cat.name);
-	catList.appendChild(catItem);
 
-	document.body.appendChild(catList);
-
-	//Add image and count to div
+	//Add image and count
 	 var catPic = cats[i].image;
 	 var catClicks = cats[i].clickCount;
 	 console.log(catPic, catClicks);
 
-	//Listen for clicks on cat name
-	var index = i;
-	var elem = document.getElementsByTagName("li");
-	elem[index].addEventListener("click", function() {
+	 //Create image element to display catPic
+	 var currentCat = document.createElement("img");
 
-		//Put image in selectedCat div
-		var currentCat = document.getElementById("selectedCat");
+	 //Event listener when user clicks catItem, display catPic
+	 catItem.addEventListener("click", (function(catCopy) {
+	 	return function () {
+	 		currentCat.src = catCopy;
+	 		document.body.appendChild(currentCat);
+	 	};
+	 })(catPic));
 
-		var catDisplay = document.createElement("img");
-		catDisplay.src = cats[index].image;
-		//catDisplay.src = catPic;
-		//catDisplay.innerHTML = catClicks;
-		console.log(elem, catDisplay.src);
-		currentCat.appendChild(catDisplay);
-
-		document.body.appendChild(currentCat);
-
-	});
+	 //Add catItem to document
+	 document.body.appendChild(catItem);
 
 };
 
-
-
-
-
-
-
-	// <script>
-	// // create variable for counter
-	// var clickCount = 0
-
-	// //listen for clicks on cat image and increase counter
-	// var elem = document.getElementById("cat");
-	// elem.addEventListener("click", function () {
-	// 	count.innerHTML = clickCount +=1;
-	// }, false);
-	// </script>
