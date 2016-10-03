@@ -44,16 +44,27 @@ for (var i = 0; i < cats.length; i++) {
 	 var catClicks = cats[i].clickCount;
 	 console.log(catPic, catClicks);
 
-	 //Create image element to display catPic
+	 //Create image elements to display catPic & catClicks
 	 var currentCat = document.createElement("img");
+	 var currentCount = document.createElement("p");
 
-	 //Event listener when user clicks catItem, display catPic
-	 catItem.addEventListener("click", (function(catCopy) {
+	 //Event listener when user clicks catItem, display catPic & catClicks
+	 catItem.addEventListener("click", (function(catpicCopy) {
 	 	return function () {
-	 		currentCat.src = catCopy;
+	 		currentCat.src = catpicCopy;
+	 		currentCount.innerHTML = catClicks;
 	 		document.body.appendChild(currentCat);
+	 		document.body.appendChild(currentCount);
 	 	};
 	 })(catPic));
+
+	 //Event listerner when user clicks catPic
+	 currentCat.addEventListener("click", (function(catclicksCopy) {
+	 	return function () {
+	 		currentCount.innerHTML = catclicksCopy++;
+	 	};
+	 })(catClicks));
+
 
 	 //Add catItem to document
 	 document.body.appendChild(catItem);
